@@ -11,5 +11,5 @@ def index():
 
 def user_comments(username):
 	#displays an analysis of the last 50 comments by a user
-	words = comment_scraper.vocab_analysis(comment_scraper.get_user_comments(username))
-	return repr(words)
+	top, new, unique = comment_scraper.vocab_analysis(comment_scraper.get_user_comments(username),username)
+	return "Top: " + repr(top) + "\n" + "Unique: " + repr(unique) + "\n" + "New: " + repr(new)
