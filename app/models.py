@@ -2,8 +2,8 @@ from app import db
 
 class Word(db.Model):
 	__tablename__ = 'words'
-	word = db.Column(db.String(20), primary_key=True)
-	totalUse = db.Column(db.Integer,index=True)
+	word = db.Column(db.String(20), primary_key=True, index=True)
+	totalUse = db.Column(db.Integer)
 
 	def __repr__(self):
 		return '<Word: %(wordname)r Uses: %(wordcount)i>' % {"wordname": self.word, "wordcount":self.totalUse}
